@@ -11,6 +11,7 @@ body{
     color: var(--text-color);
     text-align: center;
     margin: auto;
+    font-family: "Varela Round", sans-serif;
 }
 
 a.button {
