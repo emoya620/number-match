@@ -25,7 +25,7 @@ a.button {
 }
 
 .game-header{
-    margin: 40px 0 0 0;
+    margin: 30px 0 30px 0;
     font-size: 64px;
 }
 
@@ -34,8 +34,8 @@ a.button {
 }
 
 #description-text{
-    margin: 10px auto 30px auto;
-    width: 25%;
+    margin: 0 auto 30px auto;
+    width: 30%;
     font-size: larger;
 }
 
@@ -53,7 +53,7 @@ a.button {
 }
 
 #image-container-home{
-    margin: 10px auto;
+    margin: 20px auto;
     height: 300px;
     width: 300px;
     border: 3px solid white;
@@ -81,16 +81,17 @@ a.button {
     text-align: left;
 }
 
-#image-container{
+#header-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-image{
     margin: 0 auto;
     height: 600px;
     width: 600px;
     border: 3px solid white;
-}
-
-#game-image{
-    height: 600px;
-    width: 600px;
 }
 
 #home-image{
@@ -98,4 +99,97 @@ a.button {
     width: 50px;
     border: 2px solid var(--button-border);
     border-radius: 8px;
+    position: relative;
+    left: 20px;
+}
+
+#home-image:hover{
+    background-color: green;
+    transition: background-color 0.3s;
+}
+
+#game-state{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#play-btn{
+    background-color: black;
+    color: var(--button-text);
+    font-size: 24px;
+    width: 150px;
+    height: 50px;
+    border: 1px solid var(--button-border);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#play-btn:hover{
+    background-color: green;
+    font-weight: bold;
+    transition: background-color 0.3s, font-weight 0.3s;
+}
+
+#start-btn{
+    padding: 5px 8px;
+    background-color: black;
+    color: var(--button-text);
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    border: 1px solid var(--button-border);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#start-btn:hover{
+    background-color: green;
+    font-weight: bold;
+    transition: background-color 0.3s, font-weight 0.3s;
+}
+
+#number-text{
+    font-size: 24px;
+}
+
+#yes-btn{
+    margin: 0 10px;
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 40px;
+    width: 60px;
+    border: none;
+    border: 1px solid var(--button-border);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#yes-btn:hover{
+    background-color: rgb(0, 206, 0);
+    transition: background-color 0.3s;
+}
+
+#no-btn{
+    margin: 0 10px;
+    background-color: red;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 40px;
+    width: 60px;
+    border: none;
+    border: 1px solid var(--button-border);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#no-btn:hover{
+    background-color: rgb(165, 0, 0);
+    transition: background-color 0.3s;
+}
+
+#user-score{
+    font-size: 24px;
 }

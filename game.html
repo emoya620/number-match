@@ -20,11 +20,17 @@
         <div id="image-container">
             <img id="game-image" src="images/gameImages/image1.jpg" alt="Image containing multiple objects">
         </div>
-        <p id="number-text"> [Insert Number Here] </p>
-        <div id="btn-container">
-            <button> YES </button>
-            <button> NO </button>
+        <div id="game-state-container">
+            <p id="game-state"> PRESS PLAY TO START GAME </p>
+            <button id="play-btn"> PLAY </button>
         </div>
-        <p id="user-score"> Score: 0/20 </p>
+        <div id="active-game-container">
+            <p id="number-text"> This image contains <b id="item-count"> 0 </b> items </p>
+            <div id="btn-container">
+                <button id="yes-btn"> YES </button>
+                <button id="no-btn"> NO </button>
+            </div>
+            <p id="user-score"> <b> Score: </b> 0/20 </p>
+        </div>
     </body>
 </html>
