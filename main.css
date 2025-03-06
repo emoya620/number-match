@@ -94,13 +94,18 @@ a.button {
     border: 3px solid white;
 }
 
+#fixed-game-header{
+    position: relative;
+    left: 28px;
+}
+
 #home-image{
     height: 50px;
     width: 50px;
     border: 2px solid var(--button-border);
     border-radius: 8px;
     position: relative;
-    left: 20px;
+    left: 50px;
 }
 
 #home-image:hover{
