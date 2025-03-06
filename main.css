@@ -12,6 +12,7 @@ body{
     text-align: center;
     margin: auto;
     font-family: "Varela Round", sans-serif;
+    min-height: 1000px;
 }
 
 a.button {
@@ -24,7 +25,60 @@ a.button {
 }
 
 .game-header{
+    margin: 40px 0 0 0;
     font-size: 64px;
+}
+
+.instruction{
+    margin: 10px;
+}
+
+#description-text{
+    margin: 10px auto 30px auto;
+    width: 25%;
+    font-size: larger;
+}
+
+#example-container{
+    width: 450px;
+    margin: 0 auto;
+    border: 3px solid whitesmoke;
+}
+
+#example-header{
+    margin: 20px;
+    font-size: 28px;
+    position: relative;
+    top: 4px;
+}
+
+#image-container-home{
+    margin: 10px auto;
+    height: 300px;
+    width: 300px;
+    border: 3px solid white;
+}
+
+#game-image-home{
+    height: 300px;
+    width: 300px;
+}
+
+#example-prompt{
+    font-size: 20px;
+}
+
+#instruction-container{
+    margin: 20px auto;
+    width: 600px;
+}
+
+#instruction-header{
+    font-size: 32px;
+}
+
+#instruction-list{
+    text-align: left;
 }
 
 #image-container{
