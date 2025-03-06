@@ -33,6 +33,28 @@ a.button {
     margin: 10px;
 }
 
+.game-state{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.play-btn{
+    background-color: black;
+    color: var(--button-text);
+    font-size: 24px;
+    width: 150px;
+    height: 50px;
+    border: 1px solid var(--button-border);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.play-btn:hover{
+    background-color: green;
+    font-weight: bold;
+    transition: background-color 0.3s, font-weight 0.3s;
+}
+
 #description-text{
     margin: 0 auto 30px auto;
     width: 30%;
@@ -113,28 +135,6 @@ a.button {
     transition: background-color 0.3s;
 }
 
-#game-state{
-    font-size: 24px;
-    font-weight: bold;
-}
-
-#play-btn{
-    background-color: black;
-    color: var(--button-text);
-    font-size: 24px;
-    width: 150px;
-    height: 50px;
-    border: 1px solid var(--button-border);
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#play-btn:hover{
-    background-color: green;
-    font-weight: bold;
-    transition: background-color 0.3s, font-weight 0.3s;
-}
-
 #start-btn{
     padding: 5px 8px;
     background-color: black;
@@ -197,4 +197,16 @@ a.button {
 
 #user-score{
     font-size: 24px;
+}
+
+#game-over-text{
+    font-size:  48px;
+}
+
+#final-score-text{
+    font-size: 32px;
+}
+
+#play-again-btn{
+    width: 180px;
 }
