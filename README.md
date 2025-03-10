@@ -1,5 +1,5 @@
 # number-match (WIP)
- A simple game where you need to quickly identify the number of objects in an image. Built using HTML, CSS, and JavaScript
+ A simple game where you need to quickly identify the number of objects in an image. This project is built with HTML, CSS, and JavaScript.
 
 ## How to Play
 - You will be shown a random image with multiple objects and given a text prompt that states how many items are in the current image.
