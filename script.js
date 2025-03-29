@@ -12,6 +12,7 @@ const images = [
 ]
 
 const ROUND_LIMIT = 5;
+const timerContainer = document.getElementById("timer-container");
 const imageContainer = document.getElementById("image-container");
 const gameStateContainer = document.getElementById("game-state-container");
 const activeGameContainer = document.getElementById("active-game-container");
@@ -20,6 +21,7 @@ const playBtn = document.querySelector(".play-btn");
 let imageMap = new Map();
 let userScore;
 let round;
+let timerInterval;
 let imageObj;
 let currentDisplayedCount;
 
@@ -31,6 +33,21 @@ function startGame(){
     currentDisplayedCount = 0;
     gameStateContainer.innerHTML = "";
     renderNextGameState();
+}
+
+function startTimer(){
+    let time = 3;
+    timerContainer.innerHTML = `<p id="timer-el"> <b> Timer: </b> ${time}s </p>`;
+
+    timerInterval = setInterval(() => {
+        time--;
+        timerContainer.innerHTML = `<p id="timer-el"> <b> Timer: </b> ${time}s </p>`;
+
+        if (time <= 0){
+            clearInterval(timerInterval);
+            renderNextGameState()
+        }
+    }, 1000)
 }
 
 // Function that randomly selects an image from the images array that hasn't been selected before
@@ -53,9 +70,10 @@ function updateScore(guess){
 }
 
 function renderNextGameState(guess){
+    clearInterval(timerInterval);
+    
     if (round < ROUND_LIMIT){
-        if (round > 0){
-            console.log("HERE", guess);
+        if (round > 0 && guess !== null){
             updateScore(guess);
         }
 
@@ -86,10 +104,12 @@ function renderNextGameState(guess){
         yesBtn.addEventListener("click", function(){renderNextGameState(true);});
         noBtn.addEventListener("click", function(){renderNextGameState(false);});
 
+        startTimer();
         round++;
     }
     else{
         updateScore(guess);
+        timerContainer.innerHTML = "";
         imageContainer.innerHTML = "";
         activeGameContainer.innerHTML = "";
         gameStateContainer.innerHTML = `<h1 class="game-state" id="game-over-text"> Game Over! </h1>
