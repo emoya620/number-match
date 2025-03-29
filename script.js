@@ -1,3 +1,4 @@
+// Hardcoded array of images for our game
 const images = [
     {path: "images/gameImages/image1.jpg", type: "bell peppers", answer: 8},
     {path: "images/gameImages/image2.jpg", type: "zebras", answer: 3},
@@ -25,6 +26,7 @@ let timerInterval;
 let imageObj;
 let currentDisplayedCount;
 
+// Function for starting a new game
 function startGame(){
     imageMap = new Map();
     userScore = 0;
@@ -35,6 +37,7 @@ function startGame(){
     renderNextGameState();
 }
 
+// Function for statring a game timer for a new round
 function startTimer(){
     let time = 3;
     timerContainer.innerHTML = `<p id="timer-el"> <b> Timer: </b> ${time}s </p>`;
@@ -60,6 +63,7 @@ function getRandomImage(seen) {
     return images[randomIndex];
 }
 
+// Function that updates user's score based on their guess and displayed count
 function updateScore(guess){
     if (guess === true && imageObj.answer === currentDisplayedCount){
         userScore++;
@@ -69,17 +73,21 @@ function updateScore(guess){
     }
 }
 
+// Function that renders the next state of a game
 function renderNextGameState(guess){
     clearInterval(timerInterval);
     
     if (round < ROUND_LIMIT){
+        // Update score if the user previously made a guess
         if (round > 0 && guess !== null){
             updateScore(guess);
         }
 
+        // Generate a random image for the next game state
         imageObj = getRandomImage(imageMap);
         imageContainer.innerHTML = `<img id="game-image" src="${imageObj.path}" alt="Image containing multiple objects">`;
         
+        // Generate a random count of objects for the current image
         let randomizer = Math.floor(Math.random() * 3);
         if (randomizer === 0){
             currentDisplayedCount = imageObj.answer;
@@ -91,6 +99,7 @@ function renderNextGameState(guess){
             currentDisplayedCount = imageObj.answer + 1;
         }
 
+        // Display information related to current game state
         activeGameContainer.innerHTML = 
             `<p id="number-text"> This image contains <b> ${currentDisplayedCount} </b> ${imageObj.type} </p>
                 <div id="btn-container">
@@ -99,6 +108,7 @@ function renderNextGameState(guess){
                 </div>
             <p id="user-score"> <b> Score: </b> ${userScore}/5 </p>`;
 
+        // Add event listeners to the newly created buttons
         const noBtn = document.getElementById("no-btn");
         const yesBtn = document.getElementById("yes-btn");
         yesBtn.addEventListener("click", function(){renderNextGameState(true);});
@@ -108,6 +118,7 @@ function renderNextGameState(guess){
         round++;
     }
     else{
+        // Once the game has concluded, render the end of game information
         updateScore(guess);
         timerContainer.innerHTML = "";
         imageContainer.innerHTML = "";
@@ -121,4 +132,5 @@ function renderNextGameState(guess){
     }
 }
 
+// Event listeners
 playBtn.addEventListener("click", startGame);
