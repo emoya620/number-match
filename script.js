@@ -1,16 +1,5 @@
-// Hardcoded array of images for our game
-const images = [
-    {path: "images/gameImages/image1.jpg", type: "bell peppers", answer: 8},
-    {path: "images/gameImages/image2.jpg", type: "zebras", answer: 3},
-    {path: "images/gameImages/image3.jpg", type: "candles", answer: 6},
-    {path: "images/gameImages/image4.jpg", type: "donuts", answer: 9},
-    {path: "images/gameImages/image5.jpg", type: "carrots", answer: 7},
-    {path: "images/gameImages/image6.jpg", type: "chickens", answer: 4},
-    {path: "images/gameImages/image7.jpg", type: "ice cream cones", answer: 8},
-    {path: "images/gameImages/image8.jpg", type: "polar bears", answer: 3},
-    {path: "images/gameImages/image9.jpg", type: "pencils", answer: 12},
-    {path: "images/gameImages/image10.jpg", type: "bananas", answer: 6}
-]
+// Imported array of images for our game
+import { gameImages } from "./images/gameImages"
 
 const ROUND_LIMIT = 5;
 const timerContainer = document.getElementById("timer-container");
@@ -37,7 +26,7 @@ function startGame(){
     renderNextGameState();
 }
 
-// Function for statring a game timer for a new round
+// Function for starting the game timer for a new round
 function startTimer(){
     let time = 3;
     timerContainer.innerHTML = `<p id="timer-el"> <b> Timer: </b> ${time}s </p>`;
@@ -55,12 +44,12 @@ function startTimer(){
 
 // Function that randomly selects an image from the images array that hasn't been selected before
 function getRandomImage(seen) {
-    let randomIndex = Math.floor(Math.random() * images.length);
+    let randomIndex = Math.floor(Math.random() * gameImages.length);
     while(seen.has(randomIndex)){
-        randomIndex = Math.floor(Math.random() * images.length);
+        randomIndex = Math.floor(Math.random() * gameImages.length);
     }
     seen.set(randomIndex, true);
-    return images[randomIndex];
+    return gameImages[randomIndex];
 }
 
 // Function that updates user's score based on their guess and displayed count
