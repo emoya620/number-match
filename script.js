@@ -1,6 +1,7 @@
 // Imported array of images for our game
-import { gameImages } from "./images/gameImages"
+import { gameImages } from "./images/gameImages.js"
 
+// Constant Variables
 const ROUND_LIMIT = 5;
 const timerContainer = document.getElementById("timer-container");
 const imageContainer = document.getElementById("image-container");
