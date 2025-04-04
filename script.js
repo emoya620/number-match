@@ -2,7 +2,7 @@
 import { gameImages } from "./images/gameImages.js"
 
 // Constant Variables
-const ROUND_LIMIT = 5;
+const ROUND_LIMIT = 10;
 const timerContainer = document.getElementById("timer-container");
 const imageContainer = document.getElementById("image-container");
 const gameStateContainer = document.getElementById("game-state-container");
@@ -96,7 +96,7 @@ function renderNextGameState(guess){
                     <button id="yes-btn"> YES </button>
                     <button id="no-btn"> NO </button>
                 </div>
-            <p id="user-score"> <b> Score: </b> ${userScore}/5 </p>`;
+            <p id="user-score"> <b> Score: </b> ${userScore}/${ROUND_LIMIT} </p>`;
 
         // Add event listeners to the newly created buttons
         const noBtn = document.getElementById("no-btn");
@@ -114,7 +114,7 @@ function renderNextGameState(guess){
         imageContainer.innerHTML = "";
         activeGameContainer.innerHTML = "";
         gameStateContainer.innerHTML = `<h1 class="game-state" id="game-over-text"> Game Over! </h1>
-                                        <p id="final-score-text"> Your final score is: ${userScore}/5 </p>
+                                        <p id="final-score-text"> Your final score is: ${userScore}/${ROUND_LIMIT} </p>
                                         <button class="play-btn" id="play-again-btn"> PLAY AGAIN </button>`;
 
         const playAgainBtn = document.querySelector(".play-btn");
