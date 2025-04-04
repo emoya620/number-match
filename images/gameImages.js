@@ -8,5 +8,15 @@ export const gameImages = [
     {path: "images/gameImages/image7.jpg", type: "ice cream cones", answer: 8},
     {path: "images/gameImages/image8.jpg", type: "polar bears", answer: 3},
     {path: "images/gameImages/image9.jpg", type: "pencils", answer: 12},
-    {path: "images/gameImages/image10.jpg", type: "bananas", answer: 6}
+    {path: "images/gameImages/image10.jpg", type: "bananas", answer: 6},
+    {path: "images/gameImages/image11.jpg", type: "tulips", answer: 10},
+    {path: "images/gameImages/image12.jpg", type: "green army men", answer: 10},
+    {path: "images/gameImages/image13.jpg", type: "trees", answer: 8},
+    {path: "images/gameImages/image14.jpg", type: "ornaments", answer: 5},
+    {path: "images/gameImages/image15.jpg", type: "notebooks", answer: 6},
+    {path: "images/gameImages/image16.jpg", type: "notebooks", answer: 5},
+    {path: "images/gameImages/image17.jpg", type: "jars", answer: 6},
+    {path: "images/gameImages/image18.jpg", type: "jars", answer: 7},
+    {path: "images/gameImages/image19.jpg", type: "nails", answer: 5},
+    {path: "images/gameImages/image20.jpg", type: "fish hooks", answer: 4}
 ]
